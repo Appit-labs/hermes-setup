@@ -14,6 +14,10 @@
 Works in **pi · Claude Code · Codex · Cursor** and any agent that reads a `SKILL.md` — plain
 Markdown plus one stdlib script, no agent-specific tools.
 
+<p align="center">
+  <img alt="hermes-setup demo — real run, regenerable from demos/hermes-setup.json" src="skills/hermes-setup/assets/demo.gif" width="900">
+</p>
+
 ## What it is
 
 `hermes-setup` generates the secret (0600, fingerprint only), mints and verifies short-lived JWTs with `aud=hermes-agent` and an explicit scope, emits least-privilege SQL for exactly the tables the agent reads and writes, and proves the link with three assertions: valid token 200, garbage 401, expired 401.
@@ -49,6 +53,8 @@ cp -r hermes-setup/skills/hermes-setup ~/.claude/skills/      # or ~/.codex/skil
 | --- | --- |
 | always-on — the description, paid every session | ~100 |
 | on invoke | ~1.7k |
+
+The demo is a real run: `demos/hermes-setup.json` holds the captured output and `tools/make_demo.py` renders it.
 
 ## Security
 

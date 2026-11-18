@@ -1,0 +1,46 @@
+{
+  "skill": "hermes-setup",
+  "prompt": "you@laptop:~/hermes",
+  "steps": [
+    {
+      "cmd": "hermes.py token mint --scope admin_tasks --ttl 900",
+      "phase": "token",
+      "note": "short-lived by construction; the secret is never printed",
+      "out": [
+        "{",
+        "  \"expiresIn\": 900,",
+        "  \"aud\": \"hermes-agent\",",
+        "  \"scope\": \"admin_tasks\",",
+        "  \"token\": \"eyJhbGciOiJIUzI1NiIs\u2026\"",
+        "}"
+      ]
+    },
+    {
+      "cmd": "hermes.py sql grants --read candidates --write agent_tasks --db app_prod",
+      "phase": "role",
+      "note": "default-deny role: revoke everything, then grant exactly what it needs",
+      "out": [
+        "BEGIN;",
+        "DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'hermes_agent') THEN CREATE ROLE \"hermes_agent\" LOGIN; END IF; END $$;",
+        "ALTER ROLE \"hermes_agent\" NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT;",
+        "ALTER ROLE \"hermes_agent\" SET statement_timeout = '30s';",
+        "ALTER ROLE \"hermes_agent\" SET idle_in_transaction_session_timeout = '60s';",
+        "GRANT CONNECT ON DATABASE \"app_prod\" TO \"hermes_agent\";",
+        "REVOKE ALL ON SCHEMA \"public\" FROM \"hermes_agent\";",
+        "GRANT USAGE ON SCHEMA \"public\" TO \"hermes_agent\";"
+      ]
+    },
+    {
+      "cmd": "hermes.py link-check --base-url $APP --token $TOKEN",
+      "phase": "proof",
+      "note": "three assertions \u2014 a happy path alone proves nothing",
+      "out": [
+        "link check \u2192 https://app.example/api/hermes/health",
+        "  valid token        HTTP 200",
+        "  garbage token      HTTP 401",
+        "  expired token      HTTP 401",
+        "link OK"
+      ]
+    }
+  ]
+}
