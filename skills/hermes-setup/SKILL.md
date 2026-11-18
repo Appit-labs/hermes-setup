@@ -81,7 +81,7 @@ the failures on purpose, because "it doesn't work" is not a diagnosis:
 ## 4. The database role, generated not hand-written
 
 ```bash
-hermes.py sql grants --read candidates,positions --write agent_tasks --db talentino > grants.sql
+hermes.py sql grants --read candidates,positions --write agent_tasks --db app_prod > grants.sql
 psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f grants.sql
 ```
 
