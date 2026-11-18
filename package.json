@@ -1,0 +1,31 @@
+{
+  "name": "hermes-setup",
+  "version": "0.1.0",
+  "description": "Least privilege and short tokens for a Hermes agent, generated instead of described.",
+  "license": "MIT",
+  "keywords": [
+    "agent-skill",
+    "pi-package",
+    "claude-code-plugin",
+    "codex-skill"
+  ],
+  "author": {
+    "name": "Appit Labs",
+    "url": "https://github.com/Appit-labs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Appit-labs/hermes-setup.git"
+  },
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  },
+  "files": [
+    "skills",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ]
+}

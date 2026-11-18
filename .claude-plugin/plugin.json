@@ -1,0 +1,12 @@
+{
+  "name": "hermes-setup",
+  "version": "0.1.0",
+  "description": "Least privilege and short tokens for a Hermes agent, generated instead of described.",
+  "author": {
+    "name": "Appit Labs",
+    "url": "https://github.com/Appit-labs"
+  },
+  "homepage": "https://github.com/Appit-labs/hermes-setup",
+  "license": "MIT",
+  "skills": "./skills"
+}

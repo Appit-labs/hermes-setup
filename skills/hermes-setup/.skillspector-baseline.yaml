@@ -1,0 +1,18 @@
+# SkillSpector baseline — findings listed here are suppressed on future scans.
+# Edit 'reason' fields and add glob 'rules' as needed. See docs/SUPPRESSION.md.
+version: 2
+scanner_version: 2.12.0
+rules: []
+fingerprints:
+- hash: sha256:5eb0c3bbc999d43369a04fe9e8386b8fc0fb9f6d79a9b10216a34b5c05b86440
+  rule_id: AST4
+  file: scripts/hermes.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:ad5b6c38422bc7a48c628f7f98bafe505dd0a3f33341759ca9ea876880b9f7da
+  rule_id: AST4
+  file: scripts/hermes.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:b2e117aa7b2c948094d05571b9315c0d5723722561f18d8b5b4942adf8744277
+  rule_id: TT3
+  file: scripts/hermes.py
+  reason: Accepted finding (auto-generated baseline)

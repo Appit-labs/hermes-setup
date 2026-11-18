@@ -1,0 +1,6 @@
+{
+  "name": "hermes-setup",
+  "version": "0.1.0",
+  "description": "Least privilege and short tokens for a Hermes agent, generated instead of described.",
+  "skills": "./skills"
+}
