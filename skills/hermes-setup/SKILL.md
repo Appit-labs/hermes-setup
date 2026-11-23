@@ -24,6 +24,8 @@ generating the artefacts rather than describing them.
 python3 "$SKILL_DIR/scripts/hermes.py" <command>
 ```
 
+**Not for:** designing the Hermes agent itself, or rotating a credential somebody else issued — this generates a fresh least-privilege link you own end to end.
+
 ## Portability
 
 Works in any agent that can run shell commands. `$SKILL_DIR` is this skill's folder:
