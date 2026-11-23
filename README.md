@@ -45,8 +45,8 @@ git clone git@github.com:Appit-labs/hermes-setup.git
 cp -r hermes-setup/skills/hermes-setup ~/.claude/skills/      # or ~/.codex/skills/, .cursor/skills/, …
 ```
 
-> **npm name.** `hermes-setup` on npm is an unrelated Claude Code config tool. The one published from this repository is
-> `@appitlabs/hermes-setup` — `npm i @appitlabs/hermes-setup`.
+> **npm name.** `hermes-setup` on npm belongs to another author. This skill is published as
+> `@appitlabs/hermes-setup`, and the whole collection as `@appitlabs/skills`.
 
 ## Requires
 
