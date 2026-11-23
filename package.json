@@ -1,6 +1,6 @@
 {
-  "name": "hermes-setup",
-  "version": "0.1.1",
+  "name": "@appitlabs/hermes-setup",
+  "version": "0.1.2",
   "description": "Least privilege and short tokens for a Hermes agent, generated instead of described.",
   "license": "MIT",
   "keywords": [
@@ -33,5 +33,9 @@
       "name": "Appit Labs",
       "url": "https://github.com/Appit-Labs"
     }
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }

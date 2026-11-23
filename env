@@ -1,0 +1,4 @@
+HERMES_JWT_SECRET=IyhG9qw4yacuwzkbkNwaijmrx3RToKur-acocOHZTCAvTpqQApd0U_Sxen1QHFlf
+HERMES_AUDIENCE=hermes-agent
+HERMES_SCOPE=admin_tasks
+HERMES_TOKEN_TTL=900
